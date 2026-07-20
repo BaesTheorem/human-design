@@ -14,6 +14,8 @@ import json
 import sys
 from pathlib import Path
 
+import hd
+
 REPO = Path(__file__).resolve().parent.parent
 CSS = (REPO / "pipeline" / "style.css").read_text()
 
@@ -80,6 +82,40 @@ CENTER_SHORT = {"Head": "Head", "Ajna": "Ajna", "Throat": "Throat", "G": "G",
                 "Spleen": "Spleen", "Root": "Root"}
 
 
+def gates_list(subj):
+    """Every activated gate: number, keynote name, and which planets (Design in red,
+    Personality in ink) switch it on. Hanging gates are flagged."""
+    rev = {}
+    for side, key in (("d", "design"), ("p", "personality")):
+        for pname, p in subj[key].items():
+            rev.setdefault(p["gate"], {"d": [], "p": []})[side].append(p["glyph"])
+    hanging = set(subj["hanging_gates"])
+    rows = []
+    for g in subj["active_gates"]["all"]:
+        acts = rev.get(g, {"d": [], "p": []})
+        d = f"<span class='red'>{' '.join(acts['d'])}</span>" if acts["d"] else ""
+        p = " ".join(acts["p"])
+        tag = " <span class='muted'>· hanging</span>" if g in hanging else ""
+        rows.append(f"<tr><td class='num'>{g}</td><td>{hd.GATE_NAMES.get(g, '')}{tag}</td>"
+                    f"<td class='gl'>{d}</td><td class='gl'>{p}</td></tr>")
+    return ("<table class='data'><thead><tr><th>Gate</th><th>Keynote</th>"
+            "<th class='gl red'>Design</th><th class='gl'>Pers.</th></tr></thead><tbody>"
+            + "".join(rows) + "</tbody></table>")
+
+
+def channels_full_list(subj):
+    """Defined channels as a labeled list, with the two centers each bridges."""
+    if not subj["channels"]:
+        return "<p class='muted'>No fully-defined channels.</p>"
+    items = []
+    for ch in subj["channels"]:
+        a, b = ch["gates"]
+        ca, cb = (CENTER_SHORT.get(c, c) for c in ch["centers"])
+        items.append(f"<li><b>{a}-{b} {ch['name']}</b> · {hd.GATE_NAMES.get(a)} + "
+                     f"{hd.GATE_NAMES.get(b)} · <span class='muted'>{ca} ↔ {cb}</span></li>")
+    return f"<ul class='channels'>{''.join(items)}</ul>"
+
+
 def vitals_strip(subj):
     """Compact Type / Authority / Profile / Definition badge strip for the cover."""
     cells = [("Type", subj["type"]), ("Authority", subj["authority"].split(" (")[0]),
@@ -135,6 +171,7 @@ def main():
         "data": data, "workdir": workdir,
         "activations_table": activations_table, "detail_table": detail_table,
         "channels_table": channels_table, "vitals_strip": vitals_strip,
+        "gates_list": gates_list, "channels_full_list": channels_full_list,
         "centers_table": centers_table, "CENTER_SHORT": CENTER_SHORT,
         "SIGN_GLYPH": SIGN_GLYPH,
         "svg_inline": lambda p: (s := Path(p).read_text())[s.index("<svg"):],

@@ -20,8 +20,11 @@ WHEEL = [41, 19, 13, 49, 30, 55, 37, 63, 22, 36, 25, 17, 21, 51, 42, 3,
          31, 33, 7, 4, 29, 59, 40, 64, 47, 6, 46, 18, 48, 57, 32, 50,
          28, 44, 1, 43, 14, 34, 9, 5, 26, 11, 10, 58, 38, 54, 61, 60]
 WHEEL_START = 302.0            # ecliptic longitude of Gate 41, line 1, start
-GATE_ARC = 360.0 / 64          # 5.625°
-LINE_ARC = GATE_ARC / 6        # 0.9375°
+GATE_ARC = 360.0 / 64          # 5.625°  -> 64 gates
+LINE_ARC = GATE_ARC / 6        # 0.9375° -> 6 lines per gate
+COLOR_ARC = LINE_ARC / 6       # 0.15625° -> 6 colors per line
+TONE_ARC = COLOR_ARC / 6       # 0.0260417° -> 6 tones per color
+BASE_ARC = TONE_ARC / 5        # 0.0052083° -> 5 bases per tone
 
 
 def gate_line(longitude: float) -> tuple[int, int]:
@@ -31,6 +34,21 @@ def gate_line(longitude: float) -> tuple[int, int]:
     gate = WHEEL[idx]
     line = int((adj % GATE_ARC) // LINE_ARC) + 1
     return gate, line
+
+
+def full_address(longitude: float) -> dict:
+    """Full HD address: gate, line, color, tone, base. Color and tone drive the
+    Variable / Primary Health System layer (Digestion, Environment, Motivation,
+    Perspective, Cognition). Each level is 1/6 of the one above it (base is 1/5)."""
+    adj = (longitude - WHEEL_START) % 360.0
+    idx = int(adj // GATE_ARC)
+    off = adj % GATE_ARC
+    line = int(off // LINE_ARC); offl = off % LINE_ARC
+    color = int(offl // COLOR_ARC); offc = offl % COLOR_ARC
+    tone = int(offc // TONE_ARC); offt = offc % TONE_ARC
+    base = int(offt // BASE_ARC)
+    return {"gate": WHEEL[idx], "line": line + 1, "color": color + 1,
+            "tone": tone + 1, "base": base + 1}
 
 
 # --- centers --------------------------------------------------------------
@@ -47,6 +65,27 @@ CENTERS = {  # display name -> its gates
     "Root":        [19, 38, 39, 41, 52, 53, 54, 58, 60],
 }
 CENTER_OF_GATE = {g: c for c, gates in CENTERS.items() for g in gates}
+
+# Standard HD / Rave I Ching gate keynotes. Wording drifts between schools; these are
+# the common Ra-lineage names (see reference.md). Spot-check before delivery.
+GATE_NAMES = {
+    1: "Self-Expression", 2: "Direction of the Self", 3: "Ordering", 4: "Formulization",
+    5: "Fixed Rhythms", 6: "Friction", 7: "Role of the Self", 8: "Contribution",
+    9: "Focus", 10: "Behavior of the Self", 11: "Ideas", 12: "Caution",
+    13: "The Listener", 14: "Power Skills", 15: "Extremes", 16: "Skills",
+    17: "Opinions", 18: "Correction", 19: "Wanting", 20: "The Now",
+    21: "The Hunter", 22: "Openness", 23: "Assimilation", 24: "Rationalization",
+    25: "Spirit of the Self", 26: "The Egoist", 27: "Caring", 28: "The Game Player",
+    29: "Perseverance", 30: "Feelings", 31: "Influence", 32: "Continuity",
+    33: "Privacy", 34: "Power", 35: "Change", 36: "Crisis",
+    37: "Friendship", 38: "The Fighter", 39: "Provocation", 40: "Aloneness",
+    41: "Contraction", 42: "Growth", 43: "Insight", 44: "Alertness",
+    45: "The Gatherer", 46: "Determination of the Self", 47: "Realization", 48: "Depth",
+    49: "Principles", 50: "Values", 51: "Shock", 52: "Stillness",
+    53: "Beginnings", 54: "Ambition", 55: "Spirit", 56: "Stimulation",
+    57: "Intuitive Clarity", 58: "Vitality", 59: "Sexuality", 60: "Acceptance",
+    61: "Inner Truth", 62: "Detail", 63: "Doubt", 64: "Confusion",
+}
 MOTORS = {"Sacral", "SolarPlexus", "Ego", "Root"}
 CENTER_LABEL = {
     "Head": "Head", "Ajna": "Ajna", "Throat": "Throat", "G": "G (Identity)",

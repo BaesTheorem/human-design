@@ -119,3 +119,16 @@ table.activ td:nth-child(3) { text-align: center; color: var(--ink-soft); font-s
   border-top: 1px solid var(--hairline); padding-top: 6pt; }
 ul { margin: 0 0 8pt 0; padding-left: 16pt; }
 li { margin-bottom: 3pt; }
+ul.channels { list-style: none; padding: 0; }
+ul.channels li { padding: 4pt 0; border-bottom: 1px solid var(--hairline); font-size: 9.5pt; }
+table.data td.gl .red { color: var(--red); }
+
+/* Variables (advanced): four labeled rows, Design then Personality */
+.vars { margin: 6pt 0 12pt 0; }
+.varrow { display: flex; align-items: baseline; gap: 8pt; padding: 5pt 0;
+  border-bottom: 1px solid var(--hairline); }
+.varrow .vk { font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--brass); width: 1.5in; flex-shrink: 0; }
+.varrow .vv { font-size: 10.5pt; }
+.varrow .vv .sub { color: var(--ink-soft); font-size: 8.5pt; }
+.varrow.design .vk { color: var(--red); }

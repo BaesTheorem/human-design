@@ -108,8 +108,9 @@ def activation(jd):
     out = {}
     for name, _ in PLANETS:
         L = lons[name]
-        g, ln = hd.gate_line(L)
-        out[name] = {"lon": round(L, 4), "gate": g, "line": ln,
+        addr = hd.full_address(L)
+        out[name] = {"lon": round(L, 4), "gate": addr["gate"], "line": addr["line"],
+                     "color": addr["color"], "tone": addr["tone"], "base": addr["base"],
                      "sign": SIGNS[int(L // 30)], "deg": round(L % 30, 2),
                      "glyph": PLANET_GLYPH[name], "label": PLANET_LABEL.get(name, name)}
     return out

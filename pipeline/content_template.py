@@ -26,7 +26,7 @@ def build(ctx):
   <hr class="rule">
   {ctx["vitals_strip"](d)}
   <div class="bodygraphwrap">{bodygraph}</div>
-  <div class="foot">Signature {d['signature']} · Not-Self {d['not_self']} · Design {d['design_utc']}</div>
+  <div class="foot">Signature: {d['signature']} · Not-Self: {d['not_self']} · Design: {d['design_utc']}</div>
 </div>
 
 <section class="pb">

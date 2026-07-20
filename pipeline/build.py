@@ -69,7 +69,7 @@ def channels_table(subj):
     for ch in subj["channels"]:
         a, b = ch["gates"]
         ca, cb = (CENTER_SHORT.get(c, c) for c in ch["centers"])
-        rows.append(f"<tr><td class='num'>{a}–{b}</td><td>{ch['name']}</td>"
+        rows.append(f"<tr><td class='num'>{a}-{b}</td><td>{ch['name']}</td>"
                     f"<td class='muted'>{ca} ↔ {cb}</td></tr>")
     return ("<table class='data'><thead><tr><th>Gates</th><th>Channel</th>"
             "<th>Connects</th></tr></thead><tbody>" + "".join(rows) + "</tbody></table>")

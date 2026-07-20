@@ -1,0 +1,3 @@
+pyswisseph>=2.10
+playwright>=1.40
+pyyaml>=6

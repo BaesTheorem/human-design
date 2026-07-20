@@ -1,0 +1,121 @@
+/* Human Design packet print styles. Letter pages, flat + sharp, hairlines.
+   Sibling to the astrology packet: charcoal-indigo ink, brass accent, warm ivory. */
+:root {
+  --ink: #22283d;          /* charcoal indigo */
+  --ink-soft: #444b63;
+  --brass: #9c7b33;
+  --brass-soft: #c2a35f;
+  --red: #9a4a3c;          /* the Design (unconscious) red */
+  --hairline: #cbc5b6;
+  --paper-tint: #faf7f0;
+  --band: #22283d;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  color: var(--ink);
+  font-family: "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: 10.5pt; line-height: 1.55;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+@page { size: letter; }
+
+/* ---------- cover ---------- */
+.cover { text-align: center; padding-top: 0; }
+.cover .kicker {
+  font-size: 8.5pt; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--brass); margin-bottom: 8pt;
+}
+.cover h1 {
+  font-size: 28pt; font-weight: normal; letter-spacing: 0.04em;
+  margin: 0 0 3pt 0; color: var(--ink);
+}
+.cover .birthdata {
+  font-size: 9.5pt; color: var(--ink-soft); margin: 5pt 0 1pt 0; letter-spacing: 0.05em;
+}
+.cover .rule, .rule {
+  width: 1.6in; height: 1px; background: var(--brass); border: 0; margin: 10pt auto;
+}
+.vitals {
+  display: flex; justify-content: center; gap: 0; margin: 10pt auto 4pt auto;
+  border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  max-width: 6.2in;
+}
+.vitals div { flex: 1; padding: 6pt 8pt; }
+.vitals div + div { border-left: 1px solid var(--hairline); }
+.vitals .lbl {
+  font-size: 7pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brass);
+}
+.vitals .val { font-size: 11pt; margin-top: 2pt; line-height: 1.2; }
+.bodygraphwrap { margin: 10pt auto 0 auto; max-width: 3.4in; }
+.bodygraphwrap svg { width: 100%; height: auto; display: block; }
+.cover .foot {
+  font-size: 8pt; color: var(--ink-soft); letter-spacing: 0.12em; margin-top: 8pt;
+  text-transform: uppercase;
+}
+
+/* ---------- structure ---------- */
+.pb { page-break-before: always; }
+section { page-break-inside: auto; }
+h2 {
+  font-size: 15pt; font-weight: normal; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); border-bottom: 1px solid var(--brass);
+  padding-bottom: 4pt; margin: 0 0 10pt 0;
+}
+h2 .no { color: var(--brass); font-size: 10pt; letter-spacing: 0.2em; display: block; margin-bottom: 2pt; }
+h3 {
+  font-size: 11.5pt; font-weight: bold; margin: 14pt 0 4pt 0; color: var(--ink);
+  break-after: avoid; page-break-after: avoid;
+}
+h3 .tag {
+  font-weight: normal; font-size: 8.5pt; color: var(--brass); letter-spacing: 0.15em;
+  text-transform: uppercase; margin-left: 6pt;
+}
+p { margin: 0 0 7pt 0; text-align: justify; }
+.lead { font-size: 11pt; color: var(--ink-soft); font-style: italic; text-align: left; }
+.muted { color: var(--ink-soft); }
+.cols2 { display: flex; gap: 0.3in; }
+.cols2 > div { flex: 1; min-width: 0; }
+
+/* ---------- tables ---------- */
+table.data {
+  width: 100%; border-collapse: collapse; font-size: 9pt; margin: 4pt 0 12pt 0;
+}
+table.data th {
+  text-align: left; font-weight: normal; font-size: 7.5pt; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brass);
+  border-bottom: 1px solid var(--ink); padding: 3pt 6pt;
+}
+table.data td { padding: 3.5pt 6pt; border-bottom: 1px solid var(--hairline); }
+table.data td.gl { font-size: 11pt; width: 18pt; padding-right: 0; text-align: center; }
+table.data td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: bold; }
+table.data th.num { text-align: right; }
+table.data .red { color: var(--red); }
+/* the two-sided activation table reads inward from both edges */
+table.activ { max-width: 4.6in; margin: 4pt auto 12pt auto; }
+table.activ td:first-child { text-align: left; }
+table.activ td:nth-child(3) { text-align: center; color: var(--ink-soft); font-size: 8.5pt;
+  letter-spacing: 0.04em; }
+
+/* ---------- interpretation blocks ---------- */
+.entry { border-left: 2px solid var(--brass-soft); padding: 2pt 0 2pt 12pt; margin: 0 0 12pt 0;
+         page-break-inside: avoid; }
+.entry h3 { margin-top: 0; }
+.entry .pos { font-size: 9pt; color: var(--ink-soft); letter-spacing: 0.05em; margin-bottom: 4pt; }
+.centerlist { list-style: none; padding: 0; margin: 4pt 0 0 0; }
+.centerlist li { padding: 2pt 0; border-bottom: 1px solid var(--hairline); font-size: 9.5pt; }
+.cols2 .ttl, .callout .ttl { font-size: 8.5pt; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--brass); margin-bottom: 2pt; }
+.callout {
+  background: var(--paper-tint); border: 1px solid var(--hairline);
+  border-left: 2px solid var(--brass); padding: 10pt 12pt; margin: 10pt 0;
+  page-break-inside: avoid;
+}
+.callout p:last-child { margin-bottom: 0; }
+.band { background: var(--band); color: #f4f1e8; padding: 14pt 16pt; margin: 0 0 14pt 0; }
+.band h2 { color: #f4f1e8; border-bottom-color: var(--brass-soft); margin-bottom: 4pt; }
+.band p { color: #d9d4c5; margin: 0; text-align: left; font-size: 9.5pt; }
+.footer-note { font-size: 8pt; color: var(--ink-soft); margin-top: 16pt;
+  border-top: 1px solid var(--hairline); padding-top: 6pt; }
+ul { margin: 0 0 8pt 0; padding-left: 16pt; }
+li { margin-bottom: 3pt; }

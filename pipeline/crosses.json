@@ -1,0 +1,514 @@
+{
+  "13/7|1/2": {
+    "name": "the Sphinx",
+    "angle": "Right Angle"
+  },
+  "49/4|43/23": {
+    "name": "Explanation",
+    "angle": "Right Angle"
+  },
+  "30/29|14/8": {
+    "name": "Contagion",
+    "angle": "Right Angle"
+  },
+  "55/59|34/20": {
+    "name": "the Sleeping Phoenix",
+    "angle": "Right Angle"
+  },
+  "37/40|9/16": {
+    "name": "Planning",
+    "angle": "Right Angle"
+  },
+  "63/64|5/35": {
+    "name": "Consciousness",
+    "angle": "Right Angle"
+  },
+  "22/47|26/45": {
+    "name": "Rulership",
+    "angle": "Right Angle"
+  },
+  "36/6|11/12": {
+    "name": "the Eden",
+    "angle": "Right Angle"
+  },
+  "25/46|10/15": {
+    "name": "the Vessel of Love",
+    "angle": "Right Angle"
+  },
+  "17/18|58/52": {
+    "name": "Service",
+    "angle": "Right Angle"
+  },
+  "21/48|38/39": {
+    "name": "Tension",
+    "angle": "Right Angle"
+  },
+  "51/57|54/53": {
+    "name": "Penetration",
+    "angle": "Right Angle"
+  },
+  "42/32|61/62": {
+    "name": "the Maya",
+    "angle": "Right Angle"
+  },
+  "3/50|60/56": {
+    "name": "Laws",
+    "angle": "Right Angle"
+  },
+  "27/28|41/31": {
+    "name": "the Unexpected",
+    "angle": "Right Angle"
+  },
+  "24/44|19/33": {
+    "name": "the Four Ways",
+    "angle": "Right Angle"
+  },
+  "2/1|13/7": {
+    "name": "the Sphinx",
+    "angle": "Right Angle"
+  },
+  "23/43|49/4": {
+    "name": "Explanation",
+    "angle": "Right Angle"
+  },
+  "8/14|30/29": {
+    "name": "Contagion",
+    "angle": "Right Angle"
+  },
+  "20/34|55/59": {
+    "name": "the Sleeping Phoenix",
+    "angle": "Right Angle"
+  },
+  "16/9|37/40": {
+    "name": "Planning",
+    "angle": "Right Angle"
+  },
+  "35/5|63/64": {
+    "name": "Consciousness",
+    "angle": "Right Angle"
+  },
+  "45/26|22/47": {
+    "name": "Rulership",
+    "angle": "Right Angle"
+  },
+  "12/11|36/6": {
+    "name": "the Eden",
+    "angle": "Right Angle"
+  },
+  "15/10|25/46": {
+    "name": "the Vessel of Love",
+    "angle": "Right Angle"
+  },
+  "52/58|17/18": {
+    "name": "Service",
+    "angle": "Right Angle"
+  },
+  "39/38|21/48": {
+    "name": "Tension",
+    "angle": "Right Angle"
+  },
+  "53/54|51/57": {
+    "name": "Penetration",
+    "angle": "Right Angle"
+  },
+  "62/61|42/32": {
+    "name": "the Maya",
+    "angle": "Right Angle"
+  },
+  "56/60|3/50": {
+    "name": "Laws",
+    "angle": "Right Angle"
+  },
+  "31/41|27/28": {
+    "name": "the Unexpected",
+    "angle": "Right Angle"
+  },
+  "33/19|24/44": {
+    "name": "the Four Ways",
+    "angle": "Right Angle"
+  },
+  "7/13|2/1": {
+    "name": "the Sphinx",
+    "angle": "Right Angle"
+  },
+  "4/49|23/43": {
+    "name": "Explanation",
+    "angle": "Right Angle"
+  },
+  "29/30|8/14": {
+    "name": "Contagion",
+    "angle": "Right Angle"
+  },
+  "59/55|20/34": {
+    "name": "the Sleeping Phoenix",
+    "angle": "Right Angle"
+  },
+  "40/37|16/9": {
+    "name": "Planning",
+    "angle": "Right Angle"
+  },
+  "64/63|35/5": {
+    "name": "Consciousness",
+    "angle": "Right Angle"
+  },
+  "47/22|45/26": {
+    "name": "Rulership",
+    "angle": "Right Angle"
+  },
+  "6/36|12/11": {
+    "name": "the Eden",
+    "angle": "Right Angle"
+  },
+  "46/25|15/10": {
+    "name": "the Vessel of Love",
+    "angle": "Right Angle"
+  },
+  "18/17|52/58": {
+    "name": "Service",
+    "angle": "Right Angle"
+  },
+  "48/21|39/38": {
+    "name": "Tension",
+    "angle": "Right Angle"
+  },
+  "57/51|53/54": {
+    "name": "Penetration",
+    "angle": "Right Angle"
+  },
+  "32/42|62/61": {
+    "name": "the Maya",
+    "angle": "Right Angle"
+  },
+  "50/3|56/60": {
+    "name": "Laws",
+    "angle": "Right Angle"
+  },
+  "28/27|31/41": {
+    "name": "the Unexpected",
+    "angle": "Right Angle"
+  },
+  "44/24|33/19": {
+    "name": "the Four Ways",
+    "angle": "Right Angle"
+  },
+  "1/2|7/13": {
+    "name": "the Sphinx",
+    "angle": "Right Angle"
+  },
+  "43/23|4/49": {
+    "name": "Explanation",
+    "angle": "Right Angle"
+  },
+  "14/8|29/30": {
+    "name": "Contagion",
+    "angle": "Right Angle"
+  },
+  "34/20|59/55": {
+    "name": "the Sleeping Phoenix",
+    "angle": "Right Angle"
+  },
+  "9/16|40/37": {
+    "name": "Planning",
+    "angle": "Right Angle"
+  },
+  "5/35|64/63": {
+    "name": "Consciousness",
+    "angle": "Right Angle"
+  },
+  "26/45|47/22": {
+    "name": "Rulership",
+    "angle": "Right Angle"
+  },
+  "11/12|6/36": {
+    "name": "the Eden",
+    "angle": "Right Angle"
+  },
+  "10/15|46/25": {
+    "name": "the Vessel of Love",
+    "angle": "Right Angle"
+  },
+  "58/52|18/17": {
+    "name": "Service",
+    "angle": "Right Angle"
+  },
+  "38/39|48/21": {
+    "name": "Tension",
+    "angle": "Right Angle"
+  },
+  "54/53|57/51": {
+    "name": "Penetration",
+    "angle": "Right Angle"
+  },
+  "61/62|32/42": {
+    "name": "the Maya",
+    "angle": "Right Angle"
+  },
+  "60/56|50/3": {
+    "name": "Laws",
+    "angle": "Right Angle"
+  },
+  "41/31|28/27": {
+    "name": "the Unexpected",
+    "angle": "Right Angle"
+  },
+  "19/33|44/24": {
+    "name": "the Four Ways",
+    "angle": "Right Angle"
+  },
+  "13/7|43/23": {
+    "name": "Masks",
+    "angle": "Left Angle"
+  },
+  "49/4|14/8": {
+    "name": "Revolution",
+    "angle": "Left Angle"
+  },
+  "30/29|34/20": {
+    "name": "Industry",
+    "angle": "Left Angle"
+  },
+  "55/59|9/16": {
+    "name": "Spirit",
+    "angle": "Left Angle"
+  },
+  "37/40|5/35": {
+    "name": "Migration",
+    "angle": "Left Angle"
+  },
+  "63/64|26/45": {
+    "name": "Dominion",
+    "angle": "Left Angle"
+  },
+  "22/47|11/12": {
+    "name": "Informing",
+    "angle": "Left Angle"
+  },
+  "36/6|10/15": {
+    "name": "the Plane",
+    "angle": "Left Angle"
+  },
+  "25/46|58/52": {
+    "name": "Healing",
+    "angle": "Left Angle"
+  },
+  "17/18|38/39": {
+    "name": "Upheaval",
+    "angle": "Left Angle"
+  },
+  "21/48|54/53": {
+    "name": "Endeavor",
+    "angle": "Left Angle"
+  },
+  "51/57|61/62": {
+    "name": "the Clarion",
+    "angle": "Left Angle"
+  },
+  "42/32|60/56": {
+    "name": "Limitation",
+    "angle": "Left Angle"
+  },
+  "3/50|41/31": {
+    "name": "Wishes",
+    "angle": "Left Angle"
+  },
+  "27/28|19/33": {
+    "name": "Alignment",
+    "angle": "Left Angle"
+  },
+  "24/44|13/7": {
+    "name": "Incarnation",
+    "angle": "Left Angle"
+  },
+  "2/1|49/4": {
+    "name": "Defiance",
+    "angle": "Left Angle"
+  },
+  "23/43|30/29": {
+    "name": "Dedication",
+    "angle": "Left Angle"
+  },
+  "8/14|55/59": {
+    "name": "Uncertainty",
+    "angle": "Left Angle"
+  },
+  "20/34|37/40": {
+    "name": "Duality",
+    "angle": "Left Angle"
+  },
+  "16/9|63/64": {
+    "name": "Identification",
+    "angle": "Left Angle"
+  },
+  "35/5|22/47": {
+    "name": "Separation",
+    "angle": "Left Angle"
+  },
+  "45/26|36/6": {
+    "name": "Confrontation",
+    "angle": "Left Angle"
+  },
+  "12/11|25/46": {
+    "name": "Education",
+    "angle": "Left Angle"
+  },
+  "15/10|17/18": {
+    "name": "Prevention",
+    "angle": "Left Angle"
+  },
+  "52/58|21/48": {
+    "name": "Demands",
+    "angle": "Left Angle"
+  },
+  "39/38|51/57": {
+    "name": "Individualism",
+    "angle": "Left Angle"
+  },
+  "53/54|42/32": {
+    "name": "Cycles",
+    "angle": "Left Angle"
+  },
+  "62/61|3/50": {
+    "name": "Obscuration",
+    "angle": "Left Angle"
+  },
+  "56/60|27/28": {
+    "name": "Distraction",
+    "angle": "Left Angle"
+  },
+  "31/41|24/44": {
+    "name": "the Alpha",
+    "angle": "Left Angle"
+  },
+  "33/19|2/1": {
+    "name": "Refinement",
+    "angle": "Left Angle"
+  },
+  "7/13|23/43": {
+    "name": "Masks",
+    "angle": "Left Angle"
+  },
+  "4/49|8/14": {
+    "name": "Revolution",
+    "angle": "Left Angle"
+  },
+  "29/30|20/34": {
+    "name": "Industry",
+    "angle": "Left Angle"
+  },
+  "59/55|16/9": {
+    "name": "Spirit",
+    "angle": "Left Angle"
+  },
+  "40/37|35/5": {
+    "name": "Migration",
+    "angle": "Left Angle"
+  },
+  "64/63|45/26": {
+    "name": "Dominion",
+    "angle": "Left Angle"
+  },
+  "47/22|12/11": {
+    "name": "Informing",
+    "angle": "Left Angle"
+  },
+  "6/36|15/10": {
+    "name": "the Plane",
+    "angle": "Left Angle"
+  },
+  "46/25|52/58": {
+    "name": "Healing",
+    "angle": "Left Angle"
+  },
+  "18/17|39/38": {
+    "name": "Upheaval",
+    "angle": "Left Angle"
+  },
+  "48/21|53/54": {
+    "name": "Endeavor",
+    "angle": "Left Angle"
+  },
+  "57/51|62/61": {
+    "name": "the Clarion",
+    "angle": "Left Angle"
+  },
+  "32/42|56/60": {
+    "name": "Limitation",
+    "angle": "Left Angle"
+  },
+  "50/3|31/41": {
+    "name": "Wishes",
+    "angle": "Left Angle"
+  },
+  "28/27|33/19": {
+    "name": "Alignment",
+    "angle": "Left Angle"
+  },
+  "44/24|7/13": {
+    "name": "Incarnation",
+    "angle": "Left Angle"
+  },
+  "1/2|4/49": {
+    "name": "Defiance",
+    "angle": "Left Angle"
+  },
+  "43/23|29/30": {
+    "name": "Dedication",
+    "angle": "Left Angle"
+  },
+  "14/8|59/55": {
+    "name": "Uncertainty",
+    "angle": "Left Angle"
+  },
+  "34/20|40/37": {
+    "name": "Duality",
+    "angle": "Left Angle"
+  },
+  "9/16|64/63": {
+    "name": "Identification",
+    "angle": "Left Angle"
+  },
+  "5/35|47/22": {
+    "name": "Separation",
+    "angle": "Left Angle"
+  },
+  "26/45|6/36": {
+    "name": "Control",
+    "angle": "Left Angle"
+  },
+  "11/12|46/25": {
+    "name": "Education",
+    "angle": "Left Angle"
+  },
+  "10/15|18/17": {
+    "name": "Prevention",
+    "angle": "Left Angle"
+  },
+  "58/52|48/21": {
+    "name": "Demands",
+    "angle": "Left Angle"
+  },
+  "38/39|57/51": {
+    "name": "Individualism",
+    "angle": "Left Angle"
+  },
+  "54/53|32/42": {
+    "name": "Cycles",
+    "angle": "Left Angle"
+  },
+  "61/62|50/3": {
+    "name": "Obscuration",
+    "angle": "Left Angle"
+  },
+  "60/56|28/27": {
+    "name": "Distraction",
+    "angle": "Left Angle"
+  },
+  "41/31|44/24": {
+    "name": "the Alpha",
+    "angle": "Left Angle"
+  },
+  "19/33|1/2": {
+    "name": "Refinement",
+    "angle": "Left Angle"
+  }
+}

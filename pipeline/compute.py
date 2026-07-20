@@ -33,6 +33,7 @@ import swisseph as swe
 import yaml
 
 import hd
+import variables as variables_mod
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -149,7 +150,7 @@ def compute_subject(cfg):
     channel_gates = {g for a, b, *_ in chans for g in (a, b)}
     hanging = sorted(g for g in active if g not in channel_gates)
 
-    return {
+    result = {
         "name": cfg["name"], "config": cfg,
         "birth_utc": str(utc), "design_utc": f"{d_y:04d}-{d_mo:02d}-{d_d:02d} "
         f"{int(d_h):02d}:{int((d_h % 1) * 60):02d} UTC",
@@ -167,6 +168,8 @@ def compute_subject(cfg):
         "hanging_gates": hanging,
         "cross": {"angle": angle, "gates": quad, "key": cross_key, "name": cross_name},
     }
+    result["variables"] = variables_mod.compute(result)
+    return result
 
 
 def main():

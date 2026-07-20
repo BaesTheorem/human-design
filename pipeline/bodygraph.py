@@ -14,6 +14,7 @@ black with a red ring = both.
 import hd
 
 VIEW_W, VIEW_H = 851.41, 1309.4
+VB_Y0 = -104          # headroom above the Head for the four Variable arrows
 
 # palette (matches pipeline/style.css)
 INK = "#22283d"
@@ -68,6 +69,32 @@ def _poly(pts, fill, stroke, sw):
     return f"<polygon points='{d}' fill='{fill}' stroke='{stroke}' stroke-width='{sw}'/>"
 
 
+def _arrow(x, y, direction, color, s=11):
+    if direction == "left":
+        pts = [(x + s, y - s), (x + s, y + s), (x - s, y)]
+    else:
+        pts = [(x - s, y - s), (x - s, y + s), (x + s, y)]
+    d = " ".join(f"{px:.0f},{py:.0f}" for px, py in pts)
+    return f"<polygon points='{d}' fill='{color}'/>"
+
+
+def _variable_arrows(v):
+    """The four crown arrows: Design pair (red) left, Personality pair (black) right.
+    Top of each pair is Sun-driven, bottom is Node-driven."""
+    xL, xR, yT, yB = 372, 480, VB_Y0 + 36, VB_Y0 + 76
+    out = [
+        f"<text x='{xL}' y='{VB_Y0 + 16}' text-anchor='middle' font-size='12' "
+        f"letter-spacing='1.5' fill='{RED}'>DESIGN</text>",
+        f"<text x='{xR}' y='{VB_Y0 + 16}' text-anchor='middle' font-size='12' "
+        f"letter-spacing='1.5' fill='{INK}'>PERS.</text>",
+        _arrow(xL, yT, v["determination"]["arrow"], RED),
+        _arrow(xL, yB, v["environment"]["arrow"], RED),
+        _arrow(xR, yT, v["motivation"]["arrow"], INK),
+        _arrow(xR, yB, v["perspective"]["arrow"], INK),
+    ]
+    return "".join(out)
+
+
 def render(subj):
     defined = set(subj["defined_centers"])
     pers_gates = {p["gate"] for p in subj["personality"].values()}
@@ -75,9 +102,12 @@ def render(subj):
     active = pers_gates | des_gates
     defined_pairs = {frozenset(ch["gates"]) for ch in subj["channels"]}
 
-    parts = [f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {VIEW_W} {VIEW_H}' "
+    vb_h = VIEW_H - VB_Y0
+    parts = [f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 {VB_Y0} {VIEW_W} {vb_h}' "
              f"font-family=\"Palatino, Georgia, serif\">"]
-    parts.append(f"<rect x='0' y='0' width='{VIEW_W}' height='{VIEW_H}' fill='{PAPER}'/>")
+    parts.append(f"<rect x='0' y='{VB_Y0}' width='{VIEW_W}' height='{vb_h}' fill='{PAPER}'/>")
+    if subj.get("variables"):
+        parts.append(_variable_arrows(subj["variables"]))
 
     # 1. centers (behind everything)
     for name, pts in CENTER_POLY.items():

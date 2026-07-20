@@ -15,6 +15,9 @@ never paste them: every sentence is grounded in THIS person's computed chart.
 | `detail_table(subj, "personality"|"design")` | one side's full detail incl. zodiac position |
 | `channels_table(subj)` | the defined channels table |
 | `centers_table(subj)` | defined vs open centers, two columns |
+| `variables_table(subj)` | the five Variables (Digestion/Sense/Environment/Motivation/Perspective) + four-arrow code |
+| `gates_list(subj)` | every activated gate: number, keynote, Design/Personality glyphs, hanging flag |
+| `channels_full_list(subj)` | defined channels as a labeled list with gate names + centers |
 | `vitals_strip(subj)` | Type / Authority / Profile / Definition badge strip (cover) |
 | `svg_inline(path)` | inline an SVG; the BodyGraph lives at `workdir / "bodygraph-<slug>.svg"` |
 | `CENTER_SHORT` | dict of internal center keys → display names |
@@ -53,10 +56,18 @@ dicts, each mapping the 13 point names to `{lon, gate, line, sign, deg, glyph, l
    defined channel (the person's fixed, reliable wiring) and any standout hanging gates.
 8. **Part Seven: Incarnation Cross** — the life theme from the four Sun/Earth gates and the
    angle; name the cross if `cross.name` is present, otherwise describe the angle + gates.
-9. **Part Eight: Living the design** — the experiment (Strategy + Authority over time,
-   deconditioning the open centers), a one-sentence synthesis lead, then 2-3 paragraphs, and
-   the methods footer + disclaimer.
-10. **Appendix: The activation table** — `activations_table`, a short "reading the table"
+9. **Part Eight: The Variables (advanced)** — `variables_table`, then a short read of the
+   five: Digestion (Determination) + Design Sense (Cognition), Environment, Motivation,
+   Perspective, and the four-arrow code. **Flag it as the most birth-time-sensitive layer**
+   (a Tone shifts ~40 min, a Color ~4 hr), meant to be lived last. Keep the keynotes accurate
+   (see reference.md) and grounded in the person's `subj["variables"]` values; do not
+   overclaim the active/passive nuance beyond the color keynote.
+10. **Part Nine: Living the design** — the experiment (Strategy + Authority over time,
+    deconditioning the open centers), a one-sentence synthesis lead, then 2-3 paragraphs, and
+    the methods footer + disclaimer.
+11. **Part Ten: Gates & Channels** — `channels_full_list` then `gates_list`: the plain
+    inventory of the chart's activated gates and defined channels.
+12. **Appendix: The activation table** — `activations_table`, a short "reading the table"
     explainer, and optionally the two `detail_table`s with zodiac positions.
 
 ## Connection packet (optional add-on)

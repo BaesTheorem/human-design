@@ -172,7 +172,32 @@ Angle from the profile:
 Cross names live in `pipeline/crosses.json`, keyed `"pSun/pEarth|dSun/dEarth"`. If a
 cross isn't in the table, show the gates and angle and omit the name rather than guess.
 
-## 8. Honest framing (for the disclaimer)
+## 8. The Variables / Primary Health System (advanced)
+
+The finest layer, from **Color** and **Tone** (the two subdivisions below the line). The
+five keynotes come from 4 colors + 1 tone off two point-pairs; the four crown arrows come
+from tone (1-3 = Left, 4-6 = Right). Computed by `pipeline/variables.py`; keynotes below are
+Jovian-order. **This is the most birth-time-sensitive layer** (a Tone shifts ~40 min, a
+Color ~4 hr), taught last, after Type/Strategy/Authority are lived. Present with that caveat.
+
+- **Determination (Digestion)** = COLOR of Design Sun. 1 Appetite · 2 Taste · 3 Thirst ·
+  4 Touch · 5 Sound · 6 Light. Tone splits Active (1-3) / Passive (4-6). *How you take in
+  food and information.*
+- **Cognition (Design Sense)** = TONE of Design Sun. 1 Smell · 2 Taste · 3 Outer Vision ·
+  4 Inner Vision · 5 Feeling · 6 Touch. *The sense you trust.*
+- **Environment** = COLOR of Design Nodes. 1 Caves · 2 Markets · 3 Kitchens · 4 Mountains ·
+  5 Valleys · 6 Shores. Tone: Observed / Observer. *Where you thrive.*
+- **Motivation** = COLOR of Personality Sun. 1 Fear · 2 Hope · 3 Desire · 4 Need · 5 Guilt ·
+  6 Innocence. Tone: Strategic / Receptive. *The deepest "why" under the mind; meant to stay
+  background, not managed.* (Fear = drive to face the unknown and get clear, not anxiety.)
+- **Perspective (View)** = COLOR of Personality Nodes. 1 Survival · 2 Possibility · 3 Power ·
+  4 Wanting · 5 Probability · 6 Personal. Tone: Focused / Peripheral. *How the mind frames
+  what it sees.* (Some schools label 6 "Distraction/Wonder"; use Jovian's "Personal.")
+
+Four-arrow code `P__ D__`: Personality (Motivation, Perspective) then Design (Determination,
+Environment); Left = active/focused/directed, Right = receptive/peripheral/taking-in.
+
+## 9. Honest framing (for the disclaimer)
 
 Human Design is a self-reflective, experiential system, not a proven science. Ra Uru Hu's
 own framing: *"Don't believe it. Just experiment with it and see for yourself."* It

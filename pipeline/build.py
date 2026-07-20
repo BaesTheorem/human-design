@@ -25,7 +25,7 @@ CHART_ORDER = ["Sun", "Earth", "NorthNode", "SouthNode", "Moon", "Mercury", "Ven
 SIGN_GLYPH = {"Aries": "♈", "Taurus": "♉", "Gemini": "♊", "Cancer": "♋", "Leo": "♌",
               "Virgo": "♍", "Libra": "♎", "Scorpio": "♏", "Sagittarius": "♐",
               "Capricorn": "♑", "Aquarius": "♒", "Pisces": "♓"}
-GLYPH_CHARS = "♈♉♊♋♌♍♎♏♐♑♒♓☉⊕☽☿♀♂♃♄♅♆♇☊☋"
+GLYPH_CHARS = "♈♉♊♋♌♍♎♏♐♑♒♓☉⊕☽☿♀♂♃♄♅♆♇☊☋◀▶"
 
 
 def activations_table(subj):
@@ -116,6 +116,36 @@ def channels_full_list(subj):
     return f"<ul class='channels'>{''.join(items)}</ul>"
 
 
+ARROW_CHAR = {"left": "◀", "right": "▶"}
+
+
+def variables_table(subj):
+    """The five transformations as labeled rows: Design side (red) then Personality."""
+    v = subj.get("variables")
+    if not v:
+        return ""
+    def row(side, label, name, mode, arrow, detail):
+        arr = f"<span class='sub'>{ARROW_CHAR[arrow]} {mode}</span>" if arrow else ""
+        return (f"<div class='varrow {side}'><div class='vk'>{label}</div>"
+                f"<div class='vv'>{name} {arr} <span class='sub'>{detail}</span></div></div>")
+    rows = [
+        row("design", "Digestion", v["determination"]["name"], v["determination"]["mode"],
+            v["determination"]["arrow"], "how you take things in · Design Sun colour"),
+        row("design", "Design Sense", v["cognition"]["name"], "", None,
+            "the sense you trust · Design Sun tone"),
+        row("design", "Environment", v["environment"]["name"], v["environment"]["mode"],
+            v["environment"]["arrow"], "where you thrive · Design Node colour"),
+        row("pers", "Motivation", v["motivation"]["name"], v["motivation"]["mode"],
+            v["motivation"]["arrow"], "what moves you · Personality Sun colour"),
+        row("pers", "Perspective", v["perspective"]["name"], v["perspective"]["mode"],
+            v["perspective"]["arrow"], "how you see · Personality Node colour"),
+    ]
+    return (f"<div class='vars'>{''.join(rows)}</div>"
+            f"<p class='muted' style='font-size:8.5pt'>Four-arrow code: "
+            f"<b>{v['short_code']}</b> (Personality Mind/View, Design Brain/Body; "
+            f"◀ left = active/focused, ▶ right = receptive/peripheral).</p>")
+
+
 def vitals_strip(subj):
     """Compact Type / Authority / Profile / Definition badge strip for the cover."""
     cells = [("Type", subj["type"]), ("Authority", subj["authority"].split(" (")[0]),
@@ -172,6 +202,7 @@ def main():
         "activations_table": activations_table, "detail_table": detail_table,
         "channels_table": channels_table, "vitals_strip": vitals_strip,
         "gates_list": gates_list, "channels_full_list": channels_full_list,
+        "variables_table": variables_table,
         "centers_table": centers_table, "CENTER_SHORT": CENTER_SHORT,
         "SIGN_GLYPH": SIGN_GLYPH,
         "svg_inline": lambda p: (s := Path(p).read_text())[s.index("<svg"):],

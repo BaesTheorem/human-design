@@ -7,6 +7,9 @@ See content_guide.md for the section contract and writing rules, reference.md fo
 def build(ctx):
     d = ctx["data"]["subjects"]["SLUG"]
     bodygraph = ctx["svg_inline"](ctx["workdir"] / "bodygraph-SLUG.svg")
+    variables = ctx["variables_table"](d)
+    gates_list = ctx["gates_list"](d)
+    channels_list = ctx["channels_full_list"](d)
     activ = ctx["activations_table"](d)
     centers = ctx["centers_table"](d)
     channels = ctx["channels_table"](d)
@@ -90,7 +93,20 @@ because both of their gates are activated.</p>
 </section>
 
 <section class="pb">
-<h2><span class="no">Part Eight</span>Living the Design</h2>
+<h2><span class="no">Part Eight</span>The Variables</h2>
+<p class="lead">The advanced layer: how the body takes in food, information, and place.
+Handle this one lightly.</p>
+<p>[TODO: one paragraph flagging Color/Tone, the four arrows, and that this is the most
+birth-time-sensitive layer (a Tone shifts ~40 min, a Color ~4 hr), meant to be lived last.]</p>
+{variables}
+<!-- Short reads grounded in d["variables"]: Digestion+Sense (Design Sun), Environment
+     (Design Node), Motivation + Perspective (Personality). Keynotes in reference.md; do
+     not overclaim beyond the color keynote. -->
+<div class="entry"><h3>[TODO]</h3><p>[TODO]</p></div>
+</section>
+
+<section class="pb">
+<h2><span class="no">Part Nine</span>Living the Design</h2>
 <p class="lead">If the chart were a single sentence: [TODO].</p>
 <p>[TODO: the experiment, deconditioning the open centers, 2-3 paragraphs.]</p>
 <p class="footer-note">Calculated with the Swiss Ephemeris. Design taken at 88° of solar
@@ -99,6 +115,16 @@ true node. Human Design is a self-reflective system that synthesizes the I Ching
 the chakras, and the Kabbalah; it is not scientifically validated and is not a diagnosis or
 a prediction. In the words of its founder, the invitation is not to believe any of it but to
 experiment and keep only what proves true in your own experience.</p>
+</section>
+
+<section class="pb">
+<h2><span class="no">Part Ten</span>Gates &amp; Channels</h2>
+<p class="lead">The full inventory: every gate switched on, and the channels where two
+join into fixed wiring.</p>
+<h3>Defined channels</h3>
+{channels_list}
+<h3>All activated gates</h3>
+{gates_list}
 </section>
 
 <section class="pb">

@@ -22,7 +22,10 @@ RED = "#9a4a3c"
 HAIRLINE = "#cbc5b6"
 PAPER = "#fffdf8"
 OPEN_FILL = "#ffffff"
-FAINT = "#e2ddd0"
+OPEN_STROKE = "#8c8574"   # open-center outline; must read on white paper
+FAINT = "#b3ab97"         # latent (undefined) channel stubs; darker than paper
+INACTIVE_RING = "#9a9280"
+INACTIVE_TXT = "#7c745f"
 
 # center polygons in the hdkit coordinate system
 CENTER_POLY = {
@@ -81,7 +84,7 @@ def render(subj):
         if name in defined:
             parts.append(_poly(pts, INK, INK, 1.5))
         else:
-            parts.append(_poly(pts, OPEN_FILL, HAIRLINE, 1.5))
+            parts.append(_poly(pts, OPEN_FILL, OPEN_STROKE, 2.2))
 
     # 2. latent lattice as short gate stubs (cleaner than full lines across gaps),
     #    then fully-defined channels overlaid solid on top
@@ -116,8 +119,8 @@ def render(subj):
         elif in_d:
             fill, txt, ring = RED, "#fff", RED
         else:
-            fill, txt, ring = PAPER, "#9a927f", HAIRLINE
-        sw = 3 if (in_p and in_d) else 1.2
+            fill, txt, ring = OPEN_FILL, INACTIVE_TXT, INACTIVE_RING
+        sw = 3 if (in_p and in_d) else 1.4
         parts.append(f"<circle cx='{x}' cy='{y}' r='{GATE_R}' fill='{fill}' "
                      f"stroke='{ring}' stroke-width='{sw}'/>")
         parts.append(f"<text x='{x}' y='{y + 4.2}' text-anchor='middle' "

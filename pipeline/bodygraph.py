@@ -86,27 +86,33 @@ def render(subj):
         else:
             parts.append(_poly(pts, OPEN_FILL, OPEN_STROKE, 2.2))
 
-    # 2. latent lattice as short gate stubs (cleaner than full lines across gaps),
-    #    then fully-defined channels overlaid solid on top
-    STUB = 26.0
+    # 2. every channel is a full connecting line. Three passes so colored lines
+    #    always sit above the faint lattice:
+    #      dormant (neither gate active) -> faint full line
+    #      hanging gate (one gate active) -> that half colored (ink=Personality,
+    #        red=Design), the other half faint
+    #      defined (both gates active)   -> solid brass end to end
+    def seg(x1, y1, x2, y2, color, w):
+        return (f"<line x1='{x1:.1f}' y1='{y1:.1f}' x2='{x2:.1f}' y2='{y2:.1f}' "
+                f"stroke='{color}' stroke-width='{w}' stroke-linecap='round'/>")
+
+    for a, b, *_ in hd.CHANNELS:
+        if frozenset((a, b)) not in defined_pairs:
+            (x1, y1), (x2, y2) = GATE_XY[a], GATE_XY[b]
+            parts.append(seg(x1, y1, x2, y2, FAINT, 2))
     for a, b, *_ in hd.CHANNELS:
         if frozenset((a, b)) in defined_pairs:
             continue
         (x1, y1), (x2, y2) = GATE_XY[a], GATE_XY[b]
-        dx, dy = x2 - x1, y2 - y1
-        dist = (dx * dx + dy * dy) ** 0.5 or 1.0
-        L = min(STUB, dist / 2 - GATE_R)
-        ux, uy = dx / dist, dy / dist
-        for (sx, sy), (vx, vy) in (((x1, y1), (ux, uy)), ((x2, y2), (-ux, -uy))):
-            parts.append(f"<line x1='{sx + vx * GATE_R:.1f}' y1='{sy + vy * GATE_R:.1f}' "
-                         f"x2='{sx + vx * (GATE_R + L):.1f}' y2='{sy + vy * (GATE_R + L):.1f}' "
-                         f"stroke='{FAINT}' stroke-width='2.5'/>")
+        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+        for (gx, gy), g in (((x1, y1), a), ((x2, y2), b)):
+            if g in active:
+                c = RED if (g in des_gates and g not in pers_gates) else INK
+                parts.append(seg(gx, gy, mx, my, c, 4))
     for a, b, *_ in hd.CHANNELS:
-        if frozenset((a, b)) not in defined_pairs:
-            continue
-        (x1, y1), (x2, y2) = GATE_XY[a], GATE_XY[b]
-        parts.append(f"<line x1='{x1}' y1='{y1}' x2='{x2}' y2='{y2}' "
-                     f"stroke='{BRASS}' stroke-width='6' stroke-linecap='round'/>")
+        if frozenset((a, b)) in defined_pairs:
+            (x1, y1), (x2, y2) = GATE_XY[a], GATE_XY[b]
+            parts.append(seg(x1, y1, x2, y2, BRASS, 6))
 
     # 3. gate badges on top
     for g in range(1, 65):

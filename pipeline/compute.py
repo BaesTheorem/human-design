@@ -35,8 +35,28 @@ import yaml
 import hd
 
 REPO = Path(__file__).resolve().parent.parent
-CROSSES = json.loads((REPO / "pipeline" / "crosses.json").read_text()) \
-    if (REPO / "pipeline" / "crosses.json").exists() else {}
+
+
+def _load(name):
+    p = REPO / "pipeline" / name
+    return json.loads(p.read_text()) if p.exists() else {}
+
+
+# crosses.json holds all Right Angle + Left Angle crosses (RA keys are unique; LA and
+# Juxtaposition share the same four-gate key, so the 64 Juxtaposition names live in a
+# sidecar). Look up by the computed angle and verify the stored angle matches.
+CROSSES = _load("crosses.json")
+CROSSES_JXP = _load("crosses_juxtaposition.json")
+
+
+def cross_name_for(key, angle):
+    src = CROSSES_JXP if angle == "Juxtaposition" else CROSSES
+    entry = src.get(key)
+    if isinstance(entry, dict):
+        if entry.get("angle") and entry["angle"] != angle:
+            return None  # key collision across angles; don't show a wrong name
+        return entry.get("name")
+    return entry
 
 # HD chart order. Earth and South Node are the exact opposites of Sun / North Node.
 PLANETS = [("Sun", swe.SUN), ("Earth", None), ("NorthNode", swe.TRUE_NODE),
@@ -122,8 +142,7 @@ def compute_subject(cfg):
     quad = [pers["Sun"]["gate"], pers["Earth"]["gate"],
             des["Sun"]["gate"], des["Earth"]["gate"]]
     cross_key = f"{quad[0]}/{quad[1]}|{quad[2]}/{quad[3]}"
-    cross_entry = CROSSES.get(cross_key) or {}
-    cross_name = cross_entry.get("name") if isinstance(cross_entry, dict) else cross_entry
+    cross_name = cross_name_for(cross_key, angle)
 
     # hanging gates: activated but their channel partner is not (per center)
     channel_gates = {g for a, b, *_ in chans for g in (a, b)}

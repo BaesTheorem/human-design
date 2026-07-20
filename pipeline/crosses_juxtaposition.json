@@ -1,0 +1,258 @@
+{
+  "13/7|43/23": {
+    "name": "Listening",
+    "angle": "Juxtaposition"
+  },
+  "49/4|14/8": {
+    "name": "Principles",
+    "angle": "Juxtaposition"
+  },
+  "30/29|34/20": {
+    "name": "Fates",
+    "angle": "Juxtaposition"
+  },
+  "55/59|9/16": {
+    "name": "Moods",
+    "angle": "Juxtaposition"
+  },
+  "37/40|5/35": {
+    "name": "Bargains",
+    "angle": "Juxtaposition"
+  },
+  "63/64|26/45": {
+    "name": "Doubts",
+    "angle": "Juxtaposition"
+  },
+  "22/47|11/12": {
+    "name": "Grace",
+    "angle": "Juxtaposition"
+  },
+  "36/6|10/15": {
+    "name": "Crisis",
+    "angle": "Juxtaposition"
+  },
+  "25/46|58/52": {
+    "name": "Innocence",
+    "angle": "Juxtaposition"
+  },
+  "17/18|38/39": {
+    "name": "Opinions",
+    "angle": "Juxtaposition"
+  },
+  "21/48|54/53": {
+    "name": "Control",
+    "angle": "Juxtaposition"
+  },
+  "51/57|61/62": {
+    "name": "Shock",
+    "angle": "Juxtaposition"
+  },
+  "42/32|60/56": {
+    "name": "Completion",
+    "angle": "Juxtaposition"
+  },
+  "3/50|41/31": {
+    "name": "Mutation",
+    "angle": "Juxtaposition"
+  },
+  "27/28|19/33": {
+    "name": "Caring",
+    "angle": "Juxtaposition"
+  },
+  "24/44|13/7": {
+    "name": "Rationalization",
+    "angle": "Juxtaposition"
+  },
+  "2/1|49/4": {
+    "name": "the Driver",
+    "angle": "Juxtaposition"
+  },
+  "23/43|30/29": {
+    "name": "Assimilation",
+    "angle": "Juxtaposition"
+  },
+  "8/14|55/59": {
+    "name": "Contribution",
+    "angle": "Juxtaposition"
+  },
+  "20/34|37/40": {
+    "name": "the Now",
+    "angle": "Juxtaposition"
+  },
+  "16/9|63/64": {
+    "name": "Experimentation",
+    "angle": "Juxtaposition"
+  },
+  "35/5|22/47": {
+    "name": "Experience",
+    "angle": "Juxtaposition"
+  },
+  "45/26|36/6": {
+    "name": "Possession",
+    "angle": "Juxtaposition"
+  },
+  "12/11|25/46": {
+    "name": "Articulation",
+    "angle": "Juxtaposition"
+  },
+  "15/10|17/18": {
+    "name": "Extremes",
+    "angle": "Juxtaposition"
+  },
+  "52/58|21/48": {
+    "name": "Stillness",
+    "angle": "Juxtaposition"
+  },
+  "39/38|51/57": {
+    "name": "Provocation",
+    "angle": "Juxtaposition"
+  },
+  "53/54|42/32": {
+    "name": "Beginnings",
+    "angle": "Juxtaposition"
+  },
+  "62/61|3/50": {
+    "name": "Detail",
+    "angle": "Juxtaposition"
+  },
+  "56/60|27/28": {
+    "name": "Stimulation",
+    "angle": "Juxtaposition"
+  },
+  "31/41|24/44": {
+    "name": "Influence",
+    "angle": "Juxtaposition"
+  },
+  "33/19|2/1": {
+    "name": "Retreat",
+    "angle": "Juxtaposition"
+  },
+  "7/13|23/43": {
+    "name": "Interaction",
+    "angle": "Juxtaposition"
+  },
+  "4/49|8/14": {
+    "name": "Formulation",
+    "angle": "Juxtaposition"
+  },
+  "29/30|20/34": {
+    "name": "Commitment",
+    "angle": "Juxtaposition"
+  },
+  "59/55|16/9": {
+    "name": "Strategy",
+    "angle": "Juxtaposition"
+  },
+  "40/37|35/5": {
+    "name": "Denial",
+    "angle": "Juxtaposition"
+  },
+  "64/63|45/26": {
+    "name": "Confusion",
+    "angle": "Juxtaposition"
+  },
+  "47/22|12/11": {
+    "name": "Oppression",
+    "angle": "Juxtaposition"
+  },
+  "6/36|15/10": {
+    "name": "Conflict",
+    "angle": "Juxtaposition"
+  },
+  "46/25|52/58": {
+    "name": "Serendipity",
+    "angle": "Juxtaposition"
+  },
+  "18/17|39/38": {
+    "name": "Correction",
+    "angle": "Juxtaposition"
+  },
+  "48/21|53/54": {
+    "name": "Depth",
+    "angle": "Juxtaposition"
+  },
+  "57/51|62/61": {
+    "name": "Intuition",
+    "angle": "Juxtaposition"
+  },
+  "32/42|56/60": {
+    "name": "Conservation",
+    "angle": "Juxtaposition"
+  },
+  "50/3|31/41": {
+    "name": "Values",
+    "angle": "Juxtaposition"
+  },
+  "28/27|33/19": {
+    "name": "Risks",
+    "angle": "Juxtaposition"
+  },
+  "44/24|7/13": {
+    "name": "Alertness",
+    "angle": "Juxtaposition"
+  },
+  "1/2|4/49": {
+    "name": "Self-Expression",
+    "angle": "Juxtaposition"
+  },
+  "43/23|29/30": {
+    "name": "Insight",
+    "angle": "Juxtaposition"
+  },
+  "14/8|59/55": {
+    "name": "Empowering",
+    "angle": "Juxtaposition"
+  },
+  "34/20|40/37": {
+    "name": "Power",
+    "angle": "Juxtaposition"
+  },
+  "9/16|64/63": {
+    "name": "Focus",
+    "angle": "Juxtaposition"
+  },
+  "5/35|47/22": {
+    "name": "Habits",
+    "angle": "Juxtaposition"
+  },
+  "26/45|6/36": {
+    "name": "the Trickster",
+    "angle": "Juxtaposition"
+  },
+  "11/12|46/25": {
+    "name": "Ideas",
+    "angle": "Juxtaposition"
+  },
+  "10/15|18/17": {
+    "name": "Behavior",
+    "angle": "Juxtaposition"
+  },
+  "58/52|48/21": {
+    "name": "Vitality",
+    "angle": "Juxtaposition"
+  },
+  "38/39|57/51": {
+    "name": "Opposition",
+    "angle": "Juxtaposition"
+  },
+  "54/53|32/42": {
+    "name": "Ambition",
+    "angle": "Juxtaposition"
+  },
+  "61/62|50/3": {
+    "name": "Thinking",
+    "angle": "Juxtaposition"
+  },
+  "60/56|28/27": {
+    "name": "Limitation",
+    "angle": "Juxtaposition"
+  },
+  "41/31|44/24": {
+    "name": "Fantasy",
+    "angle": "Juxtaposition"
+  },
+  "19/33|1/2": {
+    "name": "Need",
+    "angle": "Juxtaposition"
+  }
+}
